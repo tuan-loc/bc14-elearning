@@ -1,0 +1,11 @@
+<section class="showcase">
+  <ngx-slick-carousel
+    class="carousel"
+    #slickModal="slick-carousel"
+    [config]="slideConfig"
+  >
+    <div ngxSlickItem class="showcase-img" *ngFor="let item of showcaseArr">
+      <img src="{{ item.hinhAnh }}" alt="{{ item.hinhAnh }}" />
+    </div>
+  </ngx-slick-carousel>
+</section>

@@ -1,0 +1,40 @@
+<div class="container-list-user100">
+    <div class="limiter">
+        <h3>THÔNG TIN NGƯỜI DÙNG</h3>
+        <table class="table table-danger table-hover">
+            <thead>
+                <tr>
+                    <td>Tài Khoản</td>
+                    <td>Họ Tên</td>
+                    <td>Email</td>
+                    <td>Số điện thoại</td>
+                    <td class="text-center">Loại Người Dùng</td>
+                    <td class="text-center">Cập Nhật</td>
+                </tr>
+            </thead>
+            <tbody *ngFor="let user of listUser">
+                <!-- <app-user [user]="user"></app-user> -->
+                <tr>
+                    <td>{{user.taiKhoan}}</td>
+                    <td>{{user.hoTen}}</td>
+                    <td>{{user.email}}</td>
+                    <td>{{user.soDt}}</td>
+                    <td class="text-center">{{user.maLoaiNguoiDung}}</td>
+                    <td class="btn btn-info">Cập Nhật</td>
+                </tr>
+                <tr>
+
+                </tr>
+                <tr>
+
+                </tr>
+                <tr>
+
+                </tr>
+                <tr>
+
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

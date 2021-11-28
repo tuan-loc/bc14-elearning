@@ -1,0 +1,72 @@
+<div class="limiter">
+    <div class="container-login100">
+        <div class="wrap-login100">
+            <form #addUserForm="ngForm" (ngSubmit)="addUser(addUserForm.value)">
+                <h3 class="text-center">Add User Form</h3>
+                <div class="wrap-input100">
+                    <input type="text" class="input100" placeholder="Họ Tên" name="hoTen" ngModel required
+                        #HoTen="ngModel" minlength="7" maxlength="15" />
+                    <div class="alert alert-danger" *ngIf="HoTen.errors && (HoTen.dirty || HoTen.touched)">
+                        <!-- Kiểm tra rỗng -->
+                        <div *ngIf="HoTen.errors.required">Họ tên không được rỗng</div>
+
+                        <!-- Kiểm tra độ dài kí tự -->
+                        <div *ngIf="HoTen.errors.minlength || HoTen.errors.maxlength">
+                            Họ tên phải từ 7 -> 15 kí tự
+                        </div>
+                    </div>
+                </div>
+
+                <div class="wrap-input100">
+                    <input type="text" class="input100" placeholder="Tài Khoản" name="taiKhoan" ngModel required
+                        #TaiKhoan="ngModel" />
+
+                    <div class="alert alert-danger" *ngIf="TaiKhoan.errors && (TaiKhoan.dirty || TaiKhoan.touched)">
+                        <!-- Kiểm tra rỗng -->
+                        <div *ngIf="TaiKhoan.errors.required">
+                            Tài khoản không được rỗng
+                        </div>
+                    </div>
+                </div>
+
+                <div class="wrap-input100">
+                    <input type="password" class="input100" placeholder="Mật Khẩu" name="matKhau" ngModel required
+                        #MatKhau="ngModel" />
+                    <div class="alert alert-danger" *ngIf="MatKhau.errors && (MatKhau.dirty || MatKhau.touched)">
+                        <!-- Kiểm tra rỗng -->
+                        <div *ngIf="MatKhau.errors.required">Mật khẩu không được rỗng</div>
+                    </div>
+                </div>
+
+                <div class="wrap-input100">
+                    <input type="text" class="input100" placeholder="Email" name="email" ngModel required
+                        #Email="ngModel" />
+
+                    <div class="alert alert-danger" *ngIf="Email.errors && (Email.dirty || Email.touched)">
+                        <!-- Kiểm tra rỗng -->
+                        <div *ngIf="Email.errors.required">Email không được rỗng</div>
+
+                        <!-- Kiểm tra định dạng email -->
+                        <div *ngIf="Email.errors.pattern">Email không đúng định dạng</div>
+                    </div>
+                </div>
+
+                <div class="wrap-input100">
+                    <input type="text" class="input100" placeholder="Số Điện Thoại" name="soDT" ngModel required
+                        #SDT="ngModel" />
+
+                    <div class="alert alert-danger" *ngIf="SDT.errors && (SDT.dirty || SDT.touched)">
+                        <!-- Kiểm tra rỗng -->
+                        <div *ngIf="SDT.errors.required">SDT không được rỗng</div>
+                    </div>
+                </div>
+
+                <button class="add-user-form-btn" [disabled]="!addUserForm.valid">
+                    Add User
+                </button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<app-modal></app-modal>

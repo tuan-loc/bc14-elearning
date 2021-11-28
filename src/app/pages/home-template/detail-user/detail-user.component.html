@@ -1,0 +1,37 @@
+<section class="detail-user">
+  <div class="container">
+    <h2 class="detail-user-title text-center">THÔNG TIN HỌC VIÊN</h2>
+
+    <div class="detail-user-content">
+      <div class="detail-user-left col-lg-4 col-md-12 col-sm-12">
+        <div class="detail-user-private">
+          <div class="detail-user-img">
+            <img
+              src="../../../../assets/images/Online-Course-Banner.jpg"
+              alt="../../../../assets/images/Online-Course-Banner.jpg"
+            />
+          </div>
+
+          <div class="detail-user-basic">
+            <div class="text-center">{{ user.hoTen }}</div>
+            <div><i class="fas fa-user"></i>{{ user.taiKhoan }}</div>
+            <div><i class="fas fa-envelope"></i>{{ user.email }}</div>
+            <div><i class="fas fa-phone-alt"></i>{{ user.soDT }}</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="detail-user-right col-lg-8 col-md-12 col-sm-12">
+        <mat-tab-group>
+          <mat-tab label="Thông Tin Cá Nhân">
+            <app-personal-info></app-personal-info>
+          </mat-tab>
+
+          <mat-tab label="Khóa Học Đã Đăng Ký">
+            <app-registered-course></app-registered-course>
+          </mat-tab>
+        </mat-tab-group>
+      </div>
+    </div>
+  </div>
+</section>

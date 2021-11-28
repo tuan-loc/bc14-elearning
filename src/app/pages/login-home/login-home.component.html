@@ -1,0 +1,214 @@
+<div class="login-home">
+  <div class="form-box">
+    <div class="button-box">
+      <div id="btn-active"></div>
+      <button
+        type="button"
+        class="toggle-btn login-active"
+        (click)="handleLoginClick()"
+      >
+        Log In
+      </button>
+
+      <button
+        type="button"
+        class="toggle-btn register-active"
+        (click)="handleRegisterClick()"
+      >
+        Register
+      </button>
+    </div>
+
+    <div *ngIf="notify" class="notify-error">
+      {{ notify }}
+    </div>
+
+    <!-- Form Login -->
+    <form
+      id="login"
+      class="input-group"
+      #loginForm="ngForm"
+      (ngSubmit)="loginInfo(loginForm.value)"
+    >
+      <div>
+        <i class="fas fa-user"></i>
+        <input
+          type="text"
+          class="input-field"
+          name="taiKhoan"
+          ngModel
+          required
+          #TaiKhoan="ngModel"
+          placeholder="Enter your username"
+        />
+      </div>
+
+      <div
+        class="notify-error"
+        *ngIf="TaiKhoan.errors && (TaiKhoan.dirty || TaiKhoan.touched)"
+      >
+        <div *ngIf="TaiKhoan.errors.required">Tài khoản không được rỗng</div>
+      </div>
+
+      <div>
+        <i class="fas fa-key"></i>
+        <input
+          type="password"
+          class="input-field"
+          name="matKhau"
+          ngModel
+          #MatKhau="ngModel"
+          required
+          placeholder="Enter your password"
+        />
+      </div>
+
+      <div
+        class="notify-error"
+        *ngIf="MatKhau.errors && (MatKhau.dirty || MatKhau.touched)"
+      >
+        <div *ngIf="MatKhau.errors.required">Mật khẩu không được rỗng</div>
+      </div>
+
+      <button type="submit" class="submit-btn mt-3">Log in</button>
+
+      <div class="back-home mt-3">
+        <i class="fas fa-angle-double-left"></i>
+        <a routerLink="/">Quay về trang chủ</a>
+      </div>
+    </form>
+
+    <!-- Form Register -->
+    <form
+      id="register"
+      class="input-group"
+      #registerForm="ngForm"
+      (ngSubmit)="registerUser(registerForm.value)"
+    >
+      <div>
+        <i class="fas fa-question-circle"></i>
+        <input
+          type="input"
+          class="input-field"
+          name="hoTen"
+          ngModel
+          required
+          #HoTen="ngModel"
+          placeholder="Enter your fullname"
+        />
+      </div>
+
+      <div
+        class="notify-error"
+        *ngIf="HoTen.errors && (HoTen.dirty || HoTen.touched)"
+      >
+        <div *ngIf="HoTen.errors.required">Họ Tên không được rỗng</div>
+      </div>
+
+      <div>
+        <i class="fas fa-user"></i>
+        <input
+          type="text"
+          class="input-field"
+          name="taiKhoan"
+          ngModel
+          required
+          #TaiKhoanRegister="ngModel"
+          placeholder="Enter your username"
+        />
+      </div>
+
+      <div
+        class="notify-error"
+        *ngIf="
+          TaiKhoanRegister.errors &&
+          (TaiKhoanRegister.dirty || TaiKhoanRegister.touched)
+        "
+      >
+        <div *ngIf="TaiKhoanRegister.errors.required">
+          Tài khoản không được rỗng
+        </div>
+      </div>
+
+      <div>
+        <i class="fas fa-key"></i>
+        <input
+          type="password"
+          class="input-field"
+          name="matKhau"
+          ngModel
+          required
+          #MatKhauRegister="ngModel"
+          placeholder="Enter your password"
+        />
+      </div>
+
+      <div
+        class="notify-error"
+        *ngIf="
+          MatKhauRegister.errors &&
+          (MatKhauRegister.dirty || MatKhauRegister.touched)
+        "
+      >
+        <div *ngIf="MatKhauRegister.errors.required">
+          Mật khẩu không được rỗng
+        </div>
+      </div>
+
+      <div>
+        <i class="fas fa-envelope"></i>
+        <input
+          type="text"
+          class="input-field"
+          name="email"
+          ngModel
+          required
+          #Email="ngModel"
+          email
+          placeholder="Enter your email"
+        />
+      </div>
+
+      <div
+        class="notify-error"
+        *ngIf="Email.errors && (Email.dirty || Email.touched)"
+      >
+        <div *ngIf="Email.errors.required">Email không được rỗng</div>
+
+        <div *ngIf="!Email.errors.required && Email.invalid">
+          Email không đúng định dạng
+        </div>
+      </div>
+
+      <div>
+        <i class="fas fa-phone-alt"></i>
+        <input
+          type="text"
+          class="input-field"
+          name="soDT"
+          ngModel
+          required
+          #PhoneNumber="ngModel"
+          placeholder="Enter your phone"
+          minlength="10"
+          maxlength="10"
+        />
+      </div>
+
+      <div
+        class="notify-error"
+        *ngIf="PhoneNumber.errors && (PhoneNumber.dirty || PhoneNumber.touched)"
+      >
+        <div *ngIf="PhoneNumber.errors.required">SDT không được rỗng</div>
+
+        <div
+          *ngIf="PhoneNumber.errors.minlength || PhoneNumber.errors.maxlength"
+        >
+          Số điện thoại phải đủ 10 số
+        </div>
+      </div>
+
+      <button type="submit" class="submit-btn mt-3">Register</button>
+    </form>
+  </div>
+</div>

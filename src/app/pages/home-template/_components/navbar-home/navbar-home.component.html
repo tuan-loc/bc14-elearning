@@ -1,0 +1,45 @@
+<header id="header">
+  <div class="header-content">
+    <div class="logo">
+      <a routerLink="/">
+        <i class="fas fa-graduation-cap fa-5x"></i>
+        <h2>PraRoz</h2>
+      </a>
+    </div>
+
+    <!-- Menu Toggle -->
+    <div class="menu-toggle" id="menu-toggle">
+      <i class="fas fa-bars fa-5x"></i>
+      <span> Danh Mục Khóa Học</span>
+    </div>
+
+    <!-- Navbar -->
+    <div class="navbar">
+      <div class="navbar-menu">
+        <ul class="list-menu">
+          <li class="list-menu-item" *ngFor="let item of danhMucKhoaHoc">
+            <a
+              routerLink="/list-course"
+              [queryParams]="{ maDanhMuc: item.maDanhMuc }"
+              (click)="handleClickCategory()"
+              >{{ item.tenDanhMuc }}</a
+            >
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="btn-login" *ngIf="!isLogin">
+      <a class="btn btn-style" routerLink="/login">Đăng Nhập</a>
+    </div>
+
+    <div class="btn-login" *ngIf="isLogin">
+      <div class="mr-4">
+        Xin Chào, <a class="user" routerLink="/detail-user">{{ user.hoTen }}</a>
+      </div>
+      <a class="btn btn-style" routerLink="/login" (click)="logout()"
+        >Đăng xuất</a
+      >
+    </div>
+  </div>
+</header>

@@ -1,0 +1,94 @@
+<div class="limiter">
+    <div class="container-login100">
+        <div class="container">
+            <form #addCourseForm="ngForm" (ngSubmit)="addCourse(addCourseForm.value)">
+                <h3 class="text-center">THÊM KHÓA HỌC</h3>
+                <div class="wrap-input100">
+                    <input type="text" name="maKhoaHoc" class="input100" placeholder="Mã Khóa Học" ngModel required
+                        #MaKhoaHoc="ngModel">
+                    <div class="alert alert-danger" *ngIf="MaKhoaHoc.errors && (MaKhoaHoc.dirty || MaKhoaHoc.touched)">
+                        <div *ngIf="MaKhoaHoc.errors.required">
+                            Tài khoản không được rỗng
+                        </div>
+                    </div>
+                </div>
+                <div class="wrap-input100">
+                    <input type="text" name="biDanh" class="input100" placeholder="Bí Danh" ngModel required
+                        #BiDanh="ngModel">
+                    <div class="alert alert-danger" *ngIf="BiDanh.errors && (BiDanh.dirty || BiDanh.touched)">
+                        <div *ngIf="BiDanh.errors.required">
+                            Tài khoản không được rỗng
+                        </div>
+                    </div>
+                </div>
+                <div class="wrap-input100">
+                    <input type="text" name="tenKhoaHoc" class="input100" placeholder="Tên Khóa Học" ngModel required
+                        #TenKhoaHoc="ngModel">
+                    <div class="alert alert-danger"
+                        *ngIf="TenKhoaHoc.errors && (TenKhoaHoc.dirty || TenKhoaHoc.touched)">
+                        <div *ngIf="TenKhoaHoc.errors.required">
+                            Tài khoản không được rỗng
+                        </div>
+                    </div>
+                </div>
+                <div class="wrap-input100">
+                    <input type="text" name="moTa" class="input100" placeholder="Mô Tả" ngModel required
+                        #MoTa="ngModel">
+                    <div class="alert alert-danger" *ngIf="MoTa.errors && (MoTa.dirty || MoTa.touched)">
+                        <div *ngIf="MoTa.errors.required">
+                            Tài khoản không được rỗng
+                        </div>
+                    </div>
+                </div>
+                <div class="wrap-input100">
+                    <input type="text" name="luotXem" class="input100" placeholder="Lượt Xem" ngModel required
+                        #LuotXem="ngModel">
+                    <div class="alert alert-danger" *ngIf="LuotXem.errors && (LuotXem.dirty || LuotXem.touched)">
+                        <div *ngIf="LuotXem.errors.required">
+                            Tài khoản không được rỗng
+                        </div>
+                    </div>
+                </div>
+                <div class="wrap-input100">
+                    <input type="text" name="danhGia" class="input100" placeholder="Đánh Giá" ngModel required
+                        #DanhGia="ngModel">
+                    <div class="alert alert-danger" *ngIf="DanhGia.errors && (DanhGia.dirty || DanhGia.touched)">
+                        <div *ngIf="DanhGia.errors.required">
+                            Tài khoản không được rỗng
+                        </div>
+                    </div>
+                </div>
+                <div class="wrap-input100">
+                    <input type="text" name="hinhAnh" class="input100" placeholder="Hình Ảnh" ngModel required
+                        #HinhAnh="ngModel">
+                    <div class="alert alert-danger" *ngIf="HinhAnh.errors && (HinhAnh.dirty || HinhAnh.touched)">
+                        <div *ngIf="HinhAnh.errors.required">
+                            Tài khoản không được rỗng
+                        </div>
+                    </div>
+                </div>
+                <div class="wrap-input100">
+                    <input type="text" name="maNhom" class="input100" placeholder="Mã Nhóm" ngModel required
+                        #MaNhom="ngModel">
+                    <div class="alert alert-danger" *ngIf="MaNhom.errors && (MaNhom.dirty || MaNhom.touched)">
+                        <div *ngIf="MaNhom.errors.required">
+                            Tài khoản không được rỗng
+                        </div>
+                    </div>
+                </div>
+                <div class="wrap-input100">
+                    <input type="date" name="ngayTao" class="input100" placeholder="Ngày Tạo" ngModel required
+                        #NgayTao="ngModel">
+                    <div class="alert alert-danger" *ngIf="NgayTao.errors && (NgayTao.dirty || NgayTao.touched)">
+                        <div *ngIf="NgayTao.errors.required">
+                            Tài khoản không được rỗng
+                        </div>
+                    </div>
+                </div>
+                <button class="add-user-form-btn" [disabled]="!addCourseForm.valid">
+                    Add Course
+                </button>
+            </form>
+        </div>
+    </div>
+</div>

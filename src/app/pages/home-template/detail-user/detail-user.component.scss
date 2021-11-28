@@ -1,0 +1,63 @@
+.detail-user {
+  padding: 120px 0 100px;
+
+  h2 {
+    color: #fff;
+  }
+}
+
+.detail-user-content {
+  display: flex;
+}
+
+.detail-user-left {
+  height: 400px;
+  margin: 30px 20px 0 0;
+  padding-bottom: 20px;
+  background-color: gray;
+  border-radius: 10px;
+}
+
+.detail-user-img {
+  width: 150px;
+  padding-top: 20px;
+  margin: 0 auto;
+
+  img {
+    width: 100%;
+    height: 130px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 50%;
+    border: 2px solid #fff;
+  }
+}
+
+.detail-user-basic {
+  padding: 0 16px;
+
+  div {
+    font-size: 20px;
+    color: #fff;
+    margin-top: 10px;
+  }
+
+  i {
+    font-size: 20px;
+    width: 26px;
+  }
+}
+
+// Detail User Right
+.detail-user-right {
+  height: auto;
+  margin-top: 30px;
+  background-color: #fff;
+  color: #000;
+}
+
+@media (max-width: 1023px) {
+  .detail-user-content {
+    flex-wrap: wrap;
+  }
+}

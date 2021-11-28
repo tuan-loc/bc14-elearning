@@ -1,0 +1,58 @@
+<div class="limiter">
+  <div class="container-login100">
+    <div class="wrap-login100">
+      <div class="login100-pic js-tilt" data-tilt>
+        <img src="./assets/images/img-01.png" alt="IMG">
+      </div>
+
+      <form class="login100-form validate-form" #loginForm="ngForm" (ngSubmit)="login(loginForm.value)">
+        <span class="login100-form-title">
+          Admin Login
+        </span>
+
+        <div class="wrap-input100">
+          <div class="form-group">
+            <input class="input100" type="text" name="taiKhoan" placeholder="Username" ngModel required
+              #TaiKhoan="ngModel" />
+            <div class="alert alert-danger" *ngIf="TaiKhoan.errors && (TaiKhoan.dirty || TaiKhoan.touched)">
+              <!-- Kiểm tra rỗng -->
+              <div *ngIf="TaiKhoan.errors.required">Tài Khoản không được rỗng</div>
+            </div>
+          </div>
+          <span class="focus-input100"></span>
+          <span class="symbol-input100">
+            <i class="fa fa-envelope" aria-hidden="true"></i>
+          </span>
+        </div>
+
+        <div class="wrap-input100">
+          <input class="input100" type="text" name="matKhau" placeholder="Password" ngModel required
+            #MatKhau="ngModel" />
+          <div class="alert alert-danger" *ngIf="MatKhau.errors && (MatKhau.dirty || MatKhau.touched)">
+            Kiểm tra rỗng
+            <div *ngIf="MatKhau.errors.required">Mật khẩu không được rỗng</div>
+          </div>
+          <span class="focus-input100"></span>
+          <span class="symbol-input100">
+            <i class="fa fa-lock" aria-hidden="true"></i>
+          </span>
+        </div>
+
+        <div class="container-login100-form-btn">
+          <button class="login100-form-btn" [disabled]="!loginForm.valid">
+            Login
+          </button>
+        </div>
+
+        <div class="text-center p-t-12">
+          <span class="txt1">
+            Forgot
+          </span>
+          <a class="txt2" href="#">
+            Username / Password?
+          </a>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

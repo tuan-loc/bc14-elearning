@@ -1,0 +1,45 @@
+/* About */
+.about {
+  display: flex;
+  width: 100%;
+  padding: 80px;
+}
+
+.about-left {
+  text-align: center;
+  padding: 0 20px;
+
+  .description {
+    color: #fff;
+    font-size: 24px;
+  }
+
+  .title {
+    font-size: 36px;
+  }
+
+  .title,
+  i {
+    color: rgb(85, 226, 85);
+  }
+}
+
+.about-right {
+  padding: 0 20px;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+@media (max-width: 1024px) {
+  .about-right {
+    margin-top: 30px;
+  }
+
+  .about {
+    padding: 20px;
+  }
+}
